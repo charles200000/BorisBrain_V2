@@ -1,4 +1,4 @@
-.idea
-CMakeModules/
-bin/
-lib/
+/.idea/
+/CMakeModules/
+/bin/
+/lib/
