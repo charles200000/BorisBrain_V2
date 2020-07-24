@@ -1,0 +1,80 @@
+/home/hades/ProgramFiles/clion/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/hades/Projects/BorisBrain_v2
+-- Found Eigen: /usr/include/eigen3  
+-- Eigen found (include: /usr/include/eigen3)
+-- Found Boost: /usr/include (found version "1.65.1") found components: thread system chrono date_time atomic 
+-- Found Eigen: /usr/include/eigen3 (Required is at least version "3.1") 
+-- Eigen found (include: /usr/include/eigen3)
+-- Found Boost: /usr/include (found suitable version "1.65.1", minimum required is "1.55.0") found components: system filesystem date_time iostreams serialization regex 
+CMake Warning at /usr/local/share/pcl-1.11/PCLConfig.cmake:271 (find_package):
+  By not providing "FindVTK.cmake" in CMAKE_MODULE_PATH this project has
+  asked CMake to find a package configuration file provided by "VTK", but
+  CMake did not find one.
+
+  Could not find a package configuration file provided by "VTK" with any of
+  the following names:
+
+    VTKConfig.cmake
+    vtk-config.cmake
+
+  Add the installation prefix of "VTK" to CMAKE_PREFIX_PATH or set "VTK_DIR"
+  to a directory containing one of the above files.  If "VTK" provides a
+  separate development package or SDK, be sure it has been installed.
+Call Stack (most recent call first):
+  /usr/local/share/pcl-1.11/PCLConfig.cmake:330 (find_VTK)
+  /usr/local/share/pcl-1.11/PCLConfig.cmake:535 (find_external_library)
+  CMakeLists.txt:28 (find_package)
+
+
+** WARNING ** 2d features related to vtk will be disabled
+** WARNING ** io features related to pcap will be disabled
+** WARNING ** io features related to png will be disabled
+CMake Warning at /usr/local/share/pcl-1.11/PCLConfig.cmake:271 (find_package):
+  By not providing "FindVTK.cmake" in CMAKE_MODULE_PATH this project has
+  asked CMake to find a package configuration file provided by "VTK", but
+  CMake did not find one.
+
+  Could not find a package configuration file provided by "VTK" with any of
+  the following names:
+
+    VTKConfig.cmake
+    vtk-config.cmake
+
+  Add the installation prefix of "VTK" to CMAKE_PREFIX_PATH or set "VTK_DIR"
+  to a directory containing one of the above files.  If "VTK" provides a
+  separate development package or SDK, be sure it has been installed.
+Call Stack (most recent call first):
+  /usr/local/share/pcl-1.11/PCLConfig.cmake:330 (find_VTK)
+  /usr/local/share/pcl-1.11/PCLConfig.cmake:535 (find_external_library)
+  CMakeLists.txt:28 (find_package)
+
+
+** WARNING ** io features related to vtk will be disabled
+-- LIBUSB_1_LIBRARY (missing: LIBUSB_1_INCLUDE_DIR) 
+** WARNING ** io features related to libusb-1.0 will be disabled
+-- QHULL found (include: /usr/include, lib: optimized;/usr/lib/x86_64-linux-gnu/libqhull.so;debug;/usr/lib/x86_64-linux-gnu/libqhull.so)
+-- looking for PCL_COMMON
+-- looking for PCL_KDTREE
+-- looking for PCL_OCTREE
+-- looking for PCL_SEARCH
+-- looking for PCL_SAMPLE_CONSENSUS
+-- looking for PCL_FILTERS
+-- looking for PCL_2D
+-- looking for PCL_GEOMETRY
+-- looking for PCL_IO
+-- looking for PCL_FEATURES
+-- looking for PCL_ML
+-- looking for PCL_SEGMENTATION
+-- looking for PCL_SURFACE
+-- looking for PCL_REGISTRATION
+-- looking for PCL_KEYPOINTS
+-- looking for PCL_TRACKING
+-- looking for PCL_RECOGNITION
+-- looking for PCL_STEREO
+-- All default dependencies ready to go !
+/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/id.pb.h
+-- Configuring done
+WARNING: Target "BorisBrain_RTMapping_utils" requests linking to directory "/usr/local/lib".  Targets may link only to libraries.  CMake is dropping the item.
+WARNING: Target "BorisBrain_TRMapping_DensePcl" requests linking to directory "/usr/local/lib".  Targets may link only to libraries.  CMake is dropping the item.
+WARNING: Target "BorisBrain_RTMapping_io" requests linking to directory "/usr/local/lib".  Targets may link only to libraries.  CMake is dropping the item.
+-- Generating done
+-- Build files have been written to: /home/hades/Projects/BorisBrain_v2/cmake-build-debug

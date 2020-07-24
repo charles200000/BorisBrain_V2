@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../lib/libaslam_lib_frames.a  CMakeFiles/aslam_lib_frames.dir/frames/visual-frame.cc.o CMakeFiles/aslam_lib_frames.dir/frames/visual-nframe.cc.o
+/usr/bin/ranlib ../../../lib/libaslam_lib_frames.a

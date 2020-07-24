@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../lib/libBorisBrain_TRMapping_DensePcl.a  CMakeFiles/BorisBrain_TRMapping_DensePcl.dir/src/dense_pcl/stereo.cpp.o CMakeFiles/BorisBrain_TRMapping_DensePcl.dir/src/dense_pcl/densifier.cpp.o CMakeFiles/BorisBrain_TRMapping_DensePcl.dir/src/dense_pcl/block-matching-sgbm.cpp.o CMakeFiles/BorisBrain_TRMapping_DensePcl.dir/src/dense_pcl/block-matching-bm.cpp.o CMakeFiles/BorisBrain_TRMapping_DensePcl.dir/src/dense_pcl/rectifier.cpp.o
+/usr/bin/ranlib ../lib/libBorisBrain_TRMapping_DensePcl.a

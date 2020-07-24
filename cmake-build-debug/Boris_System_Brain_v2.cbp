@@ -1,0 +1,795 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Boris_System_Brain_v2"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\share\;CMake Files\..\..\..\..\usr\share\OpenCV\;CMake Files\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\yaml-cpp\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\share\;CMake Files\..\..\..\..\usr\local\share\pcl-1.11\;CMake Files\..\..\..\..\usr\local\share\pcl-1.11\Modules\;CMake Files\CMakeModules\;CMake Files\src\;CMake Files\src\aslam\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/hades/Projects/BorisBrain_v2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/hades/Projects/BorisBrain_v2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="BorisBrain_RTMapping_utils">
+				<Option output="/home/hades/Projects/BorisBrain_v2/lib/libBorisBrain_RTMapping_utils.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/hades/Projects/BorisBrain_v2/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-Dqh_QHpointer"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/local/include/pcl-1.11"/>
+					<Add directory="/home/hades/Projects/BorisBrain_v2/include"/>
+					<Add directory="/usr/include/opencv"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 BorisBrain_RTMapping_utils"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="BorisBrain_RTMapping_utils/fast">
+				<Option output="/home/hades/Projects/BorisBrain_v2/lib/libBorisBrain_RTMapping_utils.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/hades/Projects/BorisBrain_v2/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-Dqh_QHpointer"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/local/include/pcl-1.11"/>
+					<Add directory="/home/hades/Projects/BorisBrain_v2/include"/>
+					<Add directory="/usr/include/opencv"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 BorisBrain_RTMapping_utils/fast"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="BorisBrain_TRMapping_DensePcl">
+				<Option output="/home/hades/Projects/BorisBrain_v2/lib/libBorisBrain_TRMapping_DensePcl.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/hades/Projects/BorisBrain_v2/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-Dqh_QHpointer"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/local/include/pcl-1.11"/>
+					<Add directory="/home/hades/Projects/BorisBrain_v2/include"/>
+					<Add directory="/usr/include/opencv"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 BorisBrain_TRMapping_DensePcl"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="BorisBrain_TRMapping_DensePcl/fast">
+				<Option output="/home/hades/Projects/BorisBrain_v2/lib/libBorisBrain_TRMapping_DensePcl.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/hades/Projects/BorisBrain_v2/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-Dqh_QHpointer"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/local/include/pcl-1.11"/>
+					<Add directory="/home/hades/Projects/BorisBrain_v2/include"/>
+					<Add directory="/usr/include/opencv"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 BorisBrain_TRMapping_DensePcl/fast"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="BorisBrain_RTMapping_io">
+				<Option output="/home/hades/Projects/BorisBrain_v2/lib/libBorisBrain_RTMapping_io.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/hades/Projects/BorisBrain_v2/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-Dqh_QHpointer"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/local/include/pcl-1.11"/>
+					<Add directory="/home/hades/Projects/BorisBrain_v2/include"/>
+					<Add directory="/usr/include/opencv"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 BorisBrain_RTMapping_io"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="BorisBrain_RTMapping_io/fast">
+				<Option output="/home/hades/Projects/BorisBrain_v2/lib/libBorisBrain_RTMapping_io.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/hades/Projects/BorisBrain_v2/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-Dqh_QHpointer"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/local/include/pcl-1.11"/>
+					<Add directory="/home/hades/Projects/BorisBrain_v2/include"/>
+					<Add directory="/usr/include/opencv"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 BorisBrain_RTMapping_io/fast"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/hades/Projects/BorisBrain_v2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="agast">
+				<Option output="/home/hades/Projects/BorisBrain_v2/lib/libagast.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-Dqh_QHpointer"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/local/include/pcl-1.11"/>
+					<Add directory="/home/hades/Projects/BorisBrain_v2/include"/>
+					<Add directory="/usr/include/opencv"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 agast"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="agast/fast">
+				<Option output="/home/hades/Projects/BorisBrain_v2/lib/libagast.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-Dqh_QHpointer"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/local/include/pcl-1.11"/>
+					<Add directory="/home/hades/Projects/BorisBrain_v2/include"/>
+					<Add directory="/usr/include/opencv"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 agast/fast"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="aslam_lib_cameras">
+				<Option output="/home/hades/Projects/BorisBrain_v2/lib/libaslam_lib_cameras.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-Dqh_QHpointer"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/local/include/pcl-1.11"/>
+					<Add directory="/home/hades/Projects/BorisBrain_v2/include"/>
+					<Add directory="/usr/include/opencv"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 aslam_lib_cameras"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="aslam_lib_cameras/fast">
+				<Option output="/home/hades/Projects/BorisBrain_v2/lib/libaslam_lib_cameras.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-Dqh_QHpointer"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/local/include/pcl-1.11"/>
+					<Add directory="/home/hades/Projects/BorisBrain_v2/include"/>
+					<Add directory="/usr/include/opencv"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 aslam_lib_cameras/fast"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="brisk">
+				<Option output="/home/hades/Projects/BorisBrain_v2/lib/libbrisk.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-Dqh_QHpointer"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/opencv"/>
+					<Add directory="/usr/local/include/pcl-1.11"/>
+					<Add directory="/home/hades/Projects/BorisBrain_v2/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 brisk"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="brisk/fast">
+				<Option output="/home/hades/Projects/BorisBrain_v2/lib/libbrisk.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-Dqh_QHpointer"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/opencv"/>
+					<Add directory="/usr/local/include/pcl-1.11"/>
+					<Add directory="/home/hades/Projects/BorisBrain_v2/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 brisk/fast"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="aslam_lib_pipeline">
+				<Option output="/home/hades/Projects/BorisBrain_v2/lib/libaslam_lib_pipeline.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-Dqh_QHpointer"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/local/include/pcl-1.11"/>
+					<Add directory="/home/hades/Projects/BorisBrain_v2/include"/>
+					<Add directory="/usr/include/opencv"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 aslam_lib_pipeline"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="aslam_lib_pipeline/fast">
+				<Option output="/home/hades/Projects/BorisBrain_v2/lib/libaslam_lib_pipeline.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-Dqh_QHpointer"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/local/include/pcl-1.11"/>
+					<Add directory="/home/hades/Projects/BorisBrain_v2/include"/>
+					<Add directory="/usr/include/opencv"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 aslam_lib_pipeline/fast"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="aslam_lib_common">
+				<Option output="/home/hades/Projects/BorisBrain_v2/lib/libaslam_lib_common.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-Dqh_QHpointer"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/local/include/pcl-1.11"/>
+					<Add directory="/home/hades/Projects/BorisBrain_v2/include"/>
+					<Add directory="/usr/include/opencv"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 aslam_lib_common"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="aslam_lib_common/fast">
+				<Option output="/home/hades/Projects/BorisBrain_v2/lib/libaslam_lib_common.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-Dqh_QHpointer"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/local/include/pcl-1.11"/>
+					<Add directory="/home/hades/Projects/BorisBrain_v2/include"/>
+					<Add directory="/usr/include/opencv"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 aslam_lib_common/fast"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="aslam_lib_frames">
+				<Option output="/home/hades/Projects/BorisBrain_v2/lib/libaslam_lib_frames.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-Dqh_QHpointer"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/local/include/pcl-1.11"/>
+					<Add directory="/home/hades/Projects/BorisBrain_v2/include"/>
+					<Add directory="/usr/include/opencv"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 aslam_lib_frames"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="aslam_lib_frames/fast">
+				<Option output="/home/hades/Projects/BorisBrain_v2/lib/libaslam_lib_frames.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-Dqh_QHpointer"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/local/include/pcl-1.11"/>
+					<Add directory="/home/hades/Projects/BorisBrain_v2/include"/>
+					<Add directory="/usr/include/opencv"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 aslam_lib_frames/fast"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/id.pb.cc">
+			<Option target="aslam_lib_common"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/id.pb.h">
+			<Option target="aslam_lib_common"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/cmake-build-debug/src/aslam/id.pb.h.rule">
+			<Option target="aslam_lib_common"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/agast/agast5-8-nms.cc">
+			<Option target="agast"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/agast/agast5-8.cc">
+			<Option target="agast"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/agast/agast7-12d-nms.cc">
+			<Option target="agast"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/agast/agast7-12d.cc">
+			<Option target="agast"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/agast/agast7-12s-nms.cc">
+			<Option target="agast"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/agast/agast7-12s.cc">
+			<Option target="agast"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/agast/ast-detector.cc">
+			<Option target="agast"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/agast/non-maximum-suppression.cc">
+			<Option target="agast"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/agast/oast9-16-nms.cc">
+			<Option target="agast"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/agast/oast9-16.cc">
+			<Option target="agast"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/brisk/brisk-descriptor-extractor.cc">
+			<Option target="brisk"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/brisk/brisk-feature-detector.cc">
+			<Option target="brisk"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/brisk/brisk-layer.cc">
+			<Option target="brisk"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/brisk/brisk-opencv.cc">
+			<Option target="brisk"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/brisk/brisk-scale-space.cc">
+			<Option target="brisk"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/brisk/brute-force-matcher.cc">
+			<Option target="brisk"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/brisk/harris-feature-detector.cc">
+			<Option target="brisk"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/brisk/harris-score-calculator-float.cc">
+			<Option target="brisk"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/brisk/harris-score-calculator.cc">
+			<Option target="brisk"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/brisk/harris-scores.cc">
+			<Option target="brisk"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/brisk/image-down-sampling.cc">
+			<Option target="brisk"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/brisk/pattern-provider.cc">
+			<Option target="brisk"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/brisk/test/image-io.cc">
+			<Option target="brisk"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/brisk/test/image-io.h">
+			<Option target="brisk"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/brisk/timer.cc">
+			<Option target="brisk"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/brisk/vectorized-filters.cc">
+			<Option target="brisk"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/cameras/camera-3d-lidar.cc">
+			<Option target="aslam_lib_cameras"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/cameras/camera-factory.cc">
+			<Option target="aslam_lib_cameras"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/cameras/camera-pinhole.cc">
+			<Option target="aslam_lib_cameras"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/cameras/camera-unified-projection.cc">
+			<Option target="aslam_lib_cameras"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/cameras/camera.cc">
+			<Option target="aslam_lib_cameras"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/cameras/distortion-equidistant.cc">
+			<Option target="aslam_lib_cameras"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/cameras/distortion-fisheye.cc">
+			<Option target="aslam_lib_cameras"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/cameras/distortion-radtan.cc">
+			<Option target="aslam_lib_cameras"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/cameras/distortion.cc">
+			<Option target="aslam_lib_cameras"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/cameras/ncamera.cc">
+			<Option target="aslam_lib_cameras"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/cameras/random-camera-generator.cc">
+			<Option target="aslam_lib_cameras"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/common/channel-serialization.cc">
+			<Option target="aslam_lib_common"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/common/channel.cc">
+			<Option target="aslam_lib_common"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/common/covariance-helpers.cc">
+			<Option target="aslam_lib_common"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/common/hash-id.cc">
+			<Option target="aslam_lib_common"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/common/internal/unique-id.cc">
+			<Option target="aslam_lib_common"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/common/reader-first-reader-writer-lock.cc">
+			<Option target="aslam_lib_common"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/common/reader-writer-lock.cc">
+			<Option target="aslam_lib_common"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/common/sensor.cc">
+			<Option target="aslam_lib_common"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/common/statistics.cc">
+			<Option target="aslam_lib_common"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/common/thread-pool.cc">
+			<Option target="aslam_lib_common"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/common/timer.cc">
+			<Option target="aslam_lib_common"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/frames/visual-frame.cc">
+			<Option target="aslam_lib_frames"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/frames/visual-nframe.cc">
+			<Option target="aslam_lib_frames"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/pipeline/test/convert-maps-legacy.cc">
+			<Option target="aslam_lib_pipeline"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/pipeline/undistorter-mapped.cc">
+			<Option target="aslam_lib_pipeline"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/pipeline/undistorter.cc">
+			<Option target="aslam_lib_pipeline"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/pipeline/visual-npipeline.cc">
+			<Option target="aslam_lib_pipeline"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/pipeline/visual-pipeline-brisk.cc">
+			<Option target="aslam_lib_pipeline"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/pipeline/visual-pipeline-freak.cc">
+			<Option target="aslam_lib_pipeline"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/pipeline/visual-pipeline-null.cc">
+			<Option target="aslam_lib_pipeline"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/pipeline/visual-pipeline.cc">
+			<Option target="aslam_lib_pipeline"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/dense_pcl/block-matching-bm.cpp">
+			<Option target="BorisBrain_TRMapping_DensePcl"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/dense_pcl/block-matching-sgbm.cpp">
+			<Option target="BorisBrain_TRMapping_DensePcl"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/dense_pcl/densifier.cpp">
+			<Option target="BorisBrain_TRMapping_DensePcl"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/dense_pcl/rectifier.cpp">
+			<Option target="BorisBrain_TRMapping_DensePcl"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/dense_pcl/stereo.cpp">
+			<Option target="BorisBrain_TRMapping_DensePcl"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/io/aerial-mapper-io.cc">
+			<Option target="BorisBrain_RTMapping_io"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/utils/utils-common.cc">
+			<Option target="BorisBrain_RTMapping_utils"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/../../../../usr/share/OpenCV/OpenCVConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\share\OpenCV\"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/../../../../usr/share/OpenCV/OpenCVConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\share\OpenCV\"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/../../../../usr/share/OpenCV/OpenCVModules-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\share\OpenCV\"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/../../../../usr/share/OpenCV/OpenCVModules.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\share\OpenCV\"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/../../../../usr/lib/x86_64-linux-gnu/cmake/yaml-cpp/yaml-cpp-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\yaml-cpp\"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/../../../../usr/lib/x86_64-linux-gnu/cmake/yaml-cpp/yaml-cpp-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\yaml-cpp\"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/../../../../usr/lib/x86_64-linux-gnu/cmake/yaml-cpp/yaml-cpp-targets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\yaml-cpp\"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/../../../../usr/lib/x86_64-linux-gnu/cmake/yaml-cpp/yaml-cpp-targets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\yaml-cpp\"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/../../../../usr/local/share/pcl-1.11/PCLConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\share\pcl-1.11\"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/../../../../usr/local/share/pcl-1.11/PCLConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\share\pcl-1.11\"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/../../../../usr/local/share/pcl-1.11/Modules/FindFLANN.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\share\pcl-1.11\Modules\"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/../../../../usr/local/share/pcl-1.11/Modules/FindQhull.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\share\pcl-1.11\Modules\"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/CMakeModules/FindEigen.cmake">
+			<Option virtualFolder="CMake Files\CMakeModules\"/>
+		</Unit>
+		<Unit filename="/home/hades/Projects/BorisBrain_v2/src/aslam/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\aslam\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

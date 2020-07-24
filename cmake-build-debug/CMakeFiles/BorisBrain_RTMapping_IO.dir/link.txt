@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../lib/libBorisBrain_RTMapping_IO.a  CMakeFiles/BorisBrain_RTMapping_IO.dir/src/io/aerial-mapper-io.cc.o
+/usr/bin/ranlib ../lib/libBorisBrain_RTMapping_IO.a

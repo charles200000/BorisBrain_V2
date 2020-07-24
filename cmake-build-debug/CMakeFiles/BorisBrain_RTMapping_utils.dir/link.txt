@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../lib/libBorisBrain_RTMapping_utils.a  CMakeFiles/BorisBrain_RTMapping_utils.dir/src/utils/utils-common.cc.o
+/usr/bin/ranlib ../lib/libBorisBrain_RTMapping_utils.a
