@@ -1,2 +1,0 @@
-# Hashes of file build rules.
-ef6ed00153b869fe7f2bcce4252fcead src/aslam/id.pb.h

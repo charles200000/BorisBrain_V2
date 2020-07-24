@@ -1,4 +1,4 @@
 /.idea/
-/CMakeModules/
 /bin/
 /lib/
+/cmake-build-debug/
