@@ -6,7 +6,7 @@
  */
 
 // HEADER
-#include "blockMatchingBm.h"
+#include "block-matching-bm.h"
 
 namespace stereo {
 void BlockMatchingBM::computeDisparityMap(

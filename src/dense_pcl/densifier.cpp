@@ -26,7 +26,7 @@ void Densifier::computePointCloud(
     const StereoRigParameters& stereo_pair,
     const RectifiedStereoPair& rectified_stereo_pair,
     DensifiedStereoPair* densified_stereo_pair,
-    sensor_msgs::PointCloud2& point_cloud_ros) const {
+    pcl::PCLPointCloud2& point_cloud) const {
   CHECK(densified_stereo_pair);
   CHECK_EQ(image_resolution_, densified_stereo_pair->disparity_map.size());
   densified_stereo_pair->point_cloud.create(
@@ -55,7 +55,7 @@ void Densifier::computePointCloud(
     pixel_intensity_ptr =
         rectified_stereo_pair.image_left.ptr<unsigned char>(v);
     for (int u = 0; u < image_resolution_.width; ++u) {
-      point_offset += point_cloud_ros.point_step;
+      point_offset += point_cloud.point_step;
       bool point_valid = false;
       if (disparity_map_ptr[u] > kMaxInvalidDisparity) {
         // w = (1 / baseline) * disparity
@@ -76,15 +76,15 @@ void Densifier::computePointCloud(
         const float z = point_G(2);
         if (!std::isinf(z)) {
           // Copy 3D point to ros message.
-          memcpy(&(point_cloud_ros.data[kPositionX + point_offset]), &x,
+          memcpy(&(point_cloud.data[kPositionX + point_offset]), &x,
                  kSizeOfFloat);
-          memcpy(&(point_cloud_ros.data[kPositionY + point_offset]), &y,
+          memcpy(&(point_cloud.data[kPositionY + point_offset]), &y,
                  kSizeOfFloat);
-          memcpy(&(point_cloud_ros.data[kPositionZ + point_offset]), &z,
+          memcpy(&(point_cloud.data[kPositionZ + point_offset]), &z,
                  kSizeOfFloat);
           const uint8_t gray = pixel_intensity_ptr[u];
           const uint32_t rgb = (gray << 16) | (gray << 8) | gray;
-          memcpy(&(point_cloud_ros.data[kPositionIntensity + point_offset]),
+          memcpy(&(point_cloud.data[kPositionIntensity + point_offset]),
                  &rgb, kSizeOfUint32T);
 
           // Todo(hitimo): Consider pre-allocation...
@@ -94,13 +94,13 @@ void Densifier::computePointCloud(
         }
       }
       if (!point_valid) {
-        memcpy(&point_cloud_ros.data[kPositionX + point_offset], &kInvalidPoint,
+        memcpy(&point_cloud.data[kPositionX + point_offset], &kInvalidPoint,
                kSizeOfFloat);
-        memcpy(&point_cloud_ros.data[kPositionY + point_offset], &kInvalidPoint,
+        memcpy(&point_cloud.data[kPositionY + point_offset], &kInvalidPoint,
                kSizeOfFloat);
-        memcpy(&point_cloud_ros.data[kPositionZ + point_offset], &kInvalidPoint,
+        memcpy(&point_cloud.data[kPositionZ + point_offset], &kInvalidPoint,
                kSizeOfFloat);
-        memcpy(&point_cloud_ros.data[kPositionIntensity + point_offset],
+        memcpy(&point_cloud.data[kPositionIntensity + point_offset],
                &kInvalidPoint, kSizeOfFloat);
       }
     }

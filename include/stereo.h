@@ -18,14 +18,19 @@
 #include <aslam/pipeline/undistorter-mapped.h>
 #include <eigen3/Eigen/Dense>
 #include <glog/logging.h>
-#include <minkindr_conversions/kindr_msg.h>
+
 #include <opencv2/calib3d/calib3d.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <pcl/point_cloud.h>
 #include <pcl/impl/point_types.hpp>
+#include <pcl/PCLPointCloud2.h>
+#include <ctime>
+#include <pcl/io/pcd_io.h>
 
+/* ROS related
 #include <ros/ros.h>
+#include <minkindr_conversions/kindr_msg.h>
 #include <sensor_msgs/fill_image.h>
 #include <sensor_msgs/Image.h>
 #include <sensor_msgs/PointCloud2.h>
@@ -34,7 +39,7 @@
 #include <image_transport/image_transport.h>
 #include <message_filters/subscriber.h>
 #include <message_filters/time_synchronizer.h>
-
+*/
 
 // PACKAGE
 #include "densifier.h"
@@ -76,14 +81,14 @@ class Stereo {
   static constexpr size_t kCameraIdxRight = 1u;
   static constexpr size_t kFrameIdx = 0u;
 
-  /// ROS
-  ros::NodeHandle node_handle_;
-  image_transport::ImageTransport image_transport_;
-  image_transport::Publisher pub_undistorted_image_;
-  ros::Publisher pub_point_cloud_;
-  sensor_msgs::PointCloud2 point_cloud_ros_msg_;
+  /// ROS DEPRECIATED
+  //ros::NodeHandle node_handle_;
+  //image_transport::ImageTransport image_transport_;
+  //image_transport::Publisher pub_undistorted_image_;
+  //ros::Publisher pub_point_cloud_;
+  //sensor_msgs::PointCloud2 point_cloud_ros_msg_;
 
-  pcl::PointCloud<pcl::PointXYZRGB> pointCloud;
+ pcl::PCLPointCloud2 pointCloud;
 
 
   std::unique_ptr<Rectifier> rectifier_;

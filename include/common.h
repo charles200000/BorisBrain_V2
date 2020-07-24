@@ -11,18 +11,24 @@
 #include <aslam/cameras/ncamera.h>
 #include <aslam/pipeline/undistorter.h>
 #include <aslam/pipeline/undistorter-mapped.h>
-#include <cv_bridge/cv_bridge.h>
 #include <eigen3/Eigen/Dense>
-#include <geometry_msgs/PoseStamped.h>
 #include <glog/logging.h>
-#include <image_transport/image_transport.h>
-#include <message_filters/subscriber.h>
-#include <message_filters/time_synchronizer.h>
-#include <minkindr_conversions/kindr_msg.h>
+//#include <minkindr_conversions/kindr_msg.h>
 #include <opencv2/calib3d/calib3d.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
+#include <pcl/point_cloud.h>
+#include <pcl/impl/point_types.hpp>
+#include <pcl/PCLPointCloud2.h>
+
+/* ROS related
 #include <sensor_msgs/PointCloud2.h>
+#include <cv_bridge/cv_bridge.h>
+#include <image_transport/image_transport.h>
+#include <message_filters/subscriber.h>
+#include <message_filters/time_synchronizer.h>
+#include <geometry_msgs/PoseStamped.h>
+*/
 
 #include <utils-nearest-neighbor.h>
 

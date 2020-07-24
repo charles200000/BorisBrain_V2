@@ -14,9 +14,7 @@ Stereo::Stereo(const std::shared_ptr<aslam::NCamera> ncameras,
                const BlockMatchingParameters& block_matching_params)
     : ncameras_(ncameras),
       settings_(settings),
-      first_frame_(true),
-      node_handle_(),
-      image_transport_(image_transport::ImageTransport(node_handle_)) {
+      first_frame_(true) {
   CHECK(ncameras_);
 
   cv::Size image_resolution;
@@ -43,47 +41,45 @@ Stereo::Stereo(const std::shared_ptr<aslam::NCamera> ncameras,
   T_B_C_ = ncameras_->get_T_C_B(kFrameIdx).inverse();
 
   // Define the point cloud message.
+    std::uint8_t FLOAT32 = 7;
+    std::uint8_t UINT32  = 6;
 
-    pointCloud.header.frame_id = "/world";
+    pointCloud.header.frame_id = "world";
     pointCloud.height = image_resolution.height;
     pointCloud.width = image_resolution.width;
-    pointCloud.points.resize(4);
+    pointCloud.fields.resize(4);
 
+    pointCloud.fields[0].name = "x";
+    pointCloud.fields[0].offset = 0;
+    pointCloud.fields[0].count = 1;
+    pointCloud.fields[0].datatype = FLOAT32;
 
-  point_cloud_ros_msg_.header.frame_id = "/world";
-  point_cloud_ros_msg_.height = image_resolution.height;
-  point_cloud_ros_msg_.width = image_resolution.width;
-  point_cloud_ros_msg_.fields.resize(4);
+    pointCloud.fields[1].name = "y";
+    pointCloud.fields[1].offset = 4;
+    pointCloud.fields[1].count = 1;
+    pointCloud.fields[1].datatype = FLOAT32;
 
-  point_cloud_ros_msg_.fields[0].name = "x";
-  point_cloud_ros_msg_.fields[0].offset = 0;
-  point_cloud_ros_msg_.fields[0].count = 1;
-  point_cloud_ros_msg_.fields[0].datatype = sensor_msgs::PointField::FLOAT32;
+    pointCloud.fields[2].name = "z";
+    pointCloud.fields[2].offset = 8;
+    pointCloud.fields[2].count = 1;
+    pointCloud.fields[2].datatype = FLOAT32;
 
-  point_cloud_ros_msg_.fields[1].name = "y";
-  point_cloud_ros_msg_.fields[1].offset = 4;
-  point_cloud_ros_msg_.fields[1].count = 1;
-  point_cloud_ros_msg_.fields[1].datatype = sensor_msgs::PointField::FLOAT32;
+    pointCloud.fields[3].name = "rgb";
+    pointCloud.fields[3].offset = 12;
+    pointCloud.fields[3].count = 1;
+    pointCloud.fields[3].datatype = UINT32;
 
-  point_cloud_ros_msg_.fields[2].name = "z";
-  point_cloud_ros_msg_.fields[2].offset = 8;
-  point_cloud_ros_msg_.fields[2].count = 1;
-  point_cloud_ros_msg_.fields[2].datatype = sensor_msgs::PointField::FLOAT32;
+  pointCloud.point_step = 16;
+  pointCloud.row_step =
+      pointCloud.point_step * pointCloud.width;
+  pointCloud.data.resize(pointCloud.row_step *
+                                   pointCloud.height);
+  pointCloud.is_dense = false;
 
-  point_cloud_ros_msg_.fields[3].name = "rgb";
-  point_cloud_ros_msg_.fields[3].offset = 12;
-  point_cloud_ros_msg_.fields[3].count = 1;
-  point_cloud_ros_msg_.fields[3].datatype = sensor_msgs::PointField::UINT32;
-
-  point_cloud_ros_msg_.point_step = 16;
-  point_cloud_ros_msg_.row_step =
-      point_cloud_ros_msg_.point_step * point_cloud_ros_msg_.width;
-  point_cloud_ros_msg_.data.resize(point_cloud_ros_msg_.row_step *
-                                   point_cloud_ros_msg_.height);
-  point_cloud_ros_msg_.is_dense = false;
-
+  /*
   pub_point_cloud_ = node_handle_.advertise<sensor_msgs::PointCloud2>(
-      "/planar_rectification/point_cloud", 100);
+      "/planar_rectification/point_cloud", 100); */
+
 }
 
 void Stereo::addFrames(const Poses& T_G_Bs, const Images& images,
@@ -175,21 +171,25 @@ void Stereo::processStereoFrame(
                                   &densified_stereo_pair);
 
   // 4. Compute point cloud.
-  point_cloud_ros_msg_.data.clear();
-  point_cloud_ros_msg_.data.resize(point_cloud_ros_msg_.row_step *
-                                   point_cloud_ros_msg_.height);
-  ros::Time timestamp = ros::Time::now();
-  point_cloud_ros_msg_.header.stamp = timestamp;
+  pointCloud.data.clear();
+  pointCloud.data.resize(pointCloud.row_step *
+                                   pointCloud.height);
+  //ros::Time timestamp = ros::Time::now();
+  uint64_t p1 = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now().time_since_epoch()).count();
+  pointCloud.header.stamp = p1;
   densifier_->computePointCloud(stereo_rig_params_, rectified_stereo_pair,
-                                &densified_stereo_pair, point_cloud_ros_msg_);
+                                &densified_stereo_pair, pointCloud);
   *point_cloud = densified_stereo_pair.point_cloud_eigen;
   if (point_cloud_intensities) {
     *point_cloud_intensities = densified_stereo_pair.point_cloud_intensities;
   }
   
   // 5. Publish the point cloud.
-  pub_point_cloud_.publish(point_cloud_ros_msg_);
-  ros::spinOnce();
+  pcl::PointCloud<pcl::PointXYZRGB> pointCloud_PCL;
+  pcl::fromPCLPointCloud2(pointCloud, pointCloud_PCL);
+  pcl::io::savePCDFileASCII ("test_pcd.pcd", pointCloud_PCL);
+  //pub_point_cloud_.publish(pointCloud);
+  //ros::spinOnce();
 
   // [Optional] Visualize rectification.
   if (settings_.show_rectification) {

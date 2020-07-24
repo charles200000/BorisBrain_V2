@@ -13,7 +13,8 @@
 #include <opencv2/calib3d/calib3d.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
-#include <ros/node_handle.h>
+
+//#include <ros/node_handle.h>
 
 #include "common.h"
 

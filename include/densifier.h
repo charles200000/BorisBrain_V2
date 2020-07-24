@@ -19,7 +19,7 @@
 //#include <ros/node_handle.h>
 
 #include "block-matching-bm.h"
-#include "blockMatchingBm.h"
+#include "block-matching-sgbm.h"
 #include "common.h"
 
 namespace stereo {
@@ -33,7 +33,7 @@ class Densifier {
   void computePointCloud(const StereoRigParameters& stereo_pair,
                          const RectifiedStereoPair& rectified_stereo_pair,
                          DensifiedStereoPair* densified_stereo_pair,
-                         sensor_msgs::PointCloud2& point_cloud_ros) const;
+                         pcl::PCLPointCloud2& point_cloud) const;
 
   inline void computeDisparityMap(
       const RectifiedStereoPair& rectified_stereo_pair,

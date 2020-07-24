@@ -6,21 +6,3 @@
 
 #IncludeRegexTransform: 
 
-../include/utils-common.h
-cmath
--
-iomanip
--
-sstream
--
-string
--
-thread
--
-glog/logging.h
--
-
-/home/hades/Projects/BorisBrain_v2/src/utils/utils-common.cc
-utils-common.h
-/home/hades/Projects/BorisBrain_v2/src/utils/utils-common.h
-
