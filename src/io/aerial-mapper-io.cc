@@ -218,6 +218,7 @@ void AerialMapperIO::loadImagesFromFile(
   for (size_t i = 0u; i < num_poses; ++i) {
     const std::string& filename =
         filename_base + std::to_string(i) + ".jpg";
+    LOG(INFO) << filename;
     cv::Mat image;
     if (!load_colored_images) {
       image = cv::imread(filename, CV_LOAD_IMAGE_GRAYSCALE);
