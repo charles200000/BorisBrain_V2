@@ -2,16 +2,15 @@
 #define ASLAM_UNIFIED_PROJECTION_CAMERA_H_
 
 #include <aslam/cameras/camera.h>
-#include <aslam/cameras/distortion.h>
 #include <aslam/common/crtp-clone.h>
-#include <aslam/common/macros.h>
 #include <aslam/common/types.h>
+#include <aslam/cameras/distortion.h>
+#include <aslam/common/macros.h>
 
 namespace aslam {
 
 // Forward declarations.
 class MappedUndistorter;
-class NCamera;
 
 /// \class UnifiedProjectionCamera
 /// \brief An implementation of the unified projection camera model with (optional) distortion.
@@ -24,12 +23,8 @@ class NCamera;
 ///             (2) Joao P. Barreto and Helder Araujo. Issues on the geometry of central
 ///                 catadioptric image formation. In CVPR, volume 2, pages 422--427, 2001.
 ///                 (http://home.isr.uc.pt/~jpbar/Publication_Source/cvpr2001.pdf)
-class UnifiedProjectionCamera
-    : public aslam::Cloneable<Camera, UnifiedProjectionCamera> {
-  friend class NCamera;
-
+class UnifiedProjectionCamera : public aslam::Cloneable<Camera, UnifiedProjectionCamera> {
   enum { kNumOfParams = 5 };
-
  public:
   ASLAM_POINTER_TYPEDEFS(UnifiedProjectionCamera);
 
@@ -51,10 +46,11 @@ class UnifiedProjectionCamera
   /// \name Constructors/destructors and operators
   /// @{
 
- public:
+ protected:
   /// \brief Empty constructor for serialization interface.
   UnifiedProjectionCamera();
 
+ public:
   /// Copy constructor for clone operation.
   UnifiedProjectionCamera(const UnifiedProjectionCamera& other) = default;
 
@@ -102,6 +98,9 @@ class UnifiedProjectionCamera
                           uint32_t image_width, uint32_t image_height);
 
   virtual ~UnifiedProjectionCamera() {};
+
+  /// \brief Compare this camera to another camera object.
+  virtual bool operator==(const Camera& other) const;
 
   /// \brief Convenience function to print the state using streams.
   friend std::ostream& operator<<(std::ostream& out,
@@ -189,6 +188,28 @@ class UnifiedProjectionCamera
   ///        0 and 100 meters.
   virtual Eigen::Vector3d createRandomVisiblePoint(double depth) const;
 
+  /// \brief Create a test camera object for unit testing.
+  template<typename DistortionType>
+  static UnifiedProjectionCamera::Ptr createTestCamera() {
+    aslam::Distortion::UniquePtr distortion = DistortionType::createTestDistortion();
+    aslam::UnifiedProjectionCamera::Ptr camera(
+        new UnifiedProjectionCamera(0.9, 400, 300, 320, 240, 640, 480, distortion));
+    aslam::CameraId id;
+    id.randomize();
+    camera->setId(id);
+    return camera;
+  }
+
+  /// \brief Create a test camera object for unit testing. (without distortion)
+  static UnifiedProjectionCamera::Ptr createTestCamera() {
+    aslam::UnifiedProjectionCamera::Ptr camera(
+        new UnifiedProjectionCamera(0.9, 400, 300, 320, 240, 640, 480));
+    aslam::CameraId id;
+    id.randomize();
+    camera->setId(id);
+    return camera;
+  }
+
   /// @}
 
  public:
@@ -226,9 +247,8 @@ class UnifiedProjectionCamera
   /// Static function that checks whether the given intrinsic parameters are valid for this model.
   static bool areParametersValid(const Eigen::VectorXd& parameters);
 
-  /// Function to check wheter the given intrinic parameters are valid for this
-  /// model.
-  virtual bool intrinsicsValid(const Eigen::VectorXd& intrinsics) const;
+  /// Function to check wheter the given intrinic parameters are valid for this model.
+  virtual bool intrinsicsValid(const Eigen::VectorXd& intrinsics);
 
   /// \brief The number of intrinsic parameters.
   virtual int getParameterSize() const {
@@ -242,34 +262,9 @@ class UnifiedProjectionCamera
 
   /// @}
 
-  /// \brief Create a test camera object for unit testing.
-  template <typename DistortionType>
-  static UnifiedProjectionCamera::Ptr createTestCamera() {
-    return UnifiedProjectionCamera::Ptr(std::move(createTestCameraUnique<DistortionType>()));
-  }
-
-  /// \brief Create a test camera object for unit testing.
-  template <typename DistortionType>
-  static UnifiedProjectionCamera::UniquePtr createTestCameraUnique() {
-    Distortion::UniquePtr distortion = DistortionType::createTestDistortion();
-    UnifiedProjectionCamera::UniquePtr camera(new UnifiedProjectionCamera(
-        0.9, 400, 300, 320, 240, 640, 480, distortion));
-    CameraId id;
-    generateId(&id);
-    camera->setId(id);
-    return std::move(camera);
-  }
-
-  /// \brief Create a test camera object for unit testing. (without distortion)
-  static UnifiedProjectionCamera::Ptr createTestCamera();
-
  private:
   /// \brief Minimal depth for a valid projection.
   static constexpr double kMinimumDepth = 1e-10;
-
-  bool isValidImpl() const override;
-  void setRandomImpl() override;
-  bool isEqualImpl(const Sensor& other, const bool verbose) const override;
 };
 
 }  // namespace aslam

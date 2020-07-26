@@ -256,20 +256,14 @@ void AerialMapperIO::loadImagesFromFile(
 
 aslam::NCamera::Ptr AerialMapperIO::loadCameraRigFromFile(
     const std::string& filename_ncameras_yaml) {
-  CHECK(filename_ncameras_yaml != "");
-  aslam::NCamera::Ptr ncameras;
-  LOG(INFO) << "Loading camera calibration from: "
-            << filename_ncameras_yaml;
-  YAML::Node doc = YAML::LoadFile(filename_ncameras_yaml.c_str());
-  LOG(INFO) << "passing to deserialize";
-    try {
-        return doc.as<aslam::NCamera::Ptr>();
-    } catch (const std::exception& ex) {
-        LOG(ERROR) << "Failed to load NCamera from YAML node with the error: \n"
-                   << ex.what();
-    }
-    // Return nullptr in the failure case.
-    return aslam::NCamera::Ptr();
+    CHECK(filename_ncameras_yaml != "");
+    aslam::NCamera::Ptr ncameras;
+    LOG(INFO) << "Loading camera calibration from: "
+              << filename_ncameras_yaml;
+    ncameras = aslam::NCamera::loadFromYaml(filename_ncameras_yaml);
+    CHECK(ncameras) << "Could not load the camera calibration from: "
+                    << filename_ncameras_yaml;
+    return ncameras;
 }
 
 void AerialMapperIO::subtractOriginFromPoses(const Eigen::Vector3d& origin,

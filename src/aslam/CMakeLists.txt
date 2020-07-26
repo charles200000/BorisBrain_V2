@@ -9,39 +9,32 @@ protobuf_generate_cpp(PROTO_SRCS PROTO_HDRS ${PROTO_DEFNS})
 add_library(aslam_lib_common
         common/channel.cc
         common/channel-serialization.cc
-        common/covariance-helpers.cc
         common/hash-id.cc
         common/reader-first-reader-writer-lock.cc
         common/reader-writer-lock.cc
-        common/sensor.cc
         common/statistics.cc
         common/thread-pool.cc
         common/timer.cc
-        common/internal/unique-id.cc
-        ${PROTO_SRCS}
-        ${PROTO_HDRS}
         )
 
 add_library(aslam_lib_cameras
-        cameras/camera-3d-lidar.cc
+        cameras/camera.cc
         cameras/camera-factory.cc
         cameras/camera-pinhole.cc
         cameras/camera-unified-projection.cc
-        cameras/camera.cc
+        cameras/camera-yaml-serialization.cc
+        cameras/distortion.cc
         cameras/distortion-equidistant.cc
         cameras/distortion-fisheye.cc
         cameras/distortion-radtan.cc
-        cameras/distortion.cc
         cameras/ncamera.cc
-        cameras/random-camera-generator.cc
-        cameras/ncamera-yaml-serialization.cpp
-        cameras/camera-yaml-serialization.cpp
+        cameras/ncamera-yaml-serialization.cc
         )
 
 add_library(aslam_lib_frames
         frames/visual-frame.cc
-        frames/visual-nframe.cc)
-
+        frames/visual-nframe.cc
+        )
 
 add_library(aslam_lib_pipeline
         pipeline/test/convert-maps-legacy.cc

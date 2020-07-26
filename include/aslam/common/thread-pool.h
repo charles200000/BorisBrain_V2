@@ -80,8 +80,6 @@ class ThreadPool {
 
   static constexpr size_t kGroupdIdNonExclusiveTask =
       std::numeric_limits<size_t>::max();
-
-  size_t numActiveThreads() const;
  private:
   // This version is not threadsafe.
   size_t numQueuedTasksImpl() const;
