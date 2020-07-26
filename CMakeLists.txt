@@ -26,7 +26,9 @@ find_package(yaml-cpp REQUIRED)
 find_package(Protobuf REQUIRED)
 FIND_PACKAGE(Boost REQUIRED COMPONENTS thread system)
 find_package( PCL 1.8 REQUIRED )
-#find_package(Glog REQUIRED)
+find_package(gflags REQUIRED)
+find_package(Glog REQUIRED)
+find_package(GDAL REQUIRED)
 
 message(STATUS "All default dependencies ready to go !")
 
@@ -36,7 +38,7 @@ INCLUDE_DIRECTORIES(
         ${Eigen_INCLUDE_DIRS}
         ${OpenCV_INCLUDE_DIRS}
         ${Boost_INCLUDE_DIRS}
-        ${Glog_INCLUDE_DIRS}
+        ${GLOG_INCLUDE_DIRS}
         ${YAML_INCLUDE_DIRS}
         ${PCL_INCLUDE_DIRS}
         ${Protobuf_INCLUDE_DIRS}
@@ -49,13 +51,13 @@ include_directories( ${CSPARSE_INCLUDE_DIR} ${CHOLMOD_INCLUDE_DIR})
 LIST(APPEND LINK_LIBS_EXTERNAL
         ${OpenCV_LIBS}
         ${Boost_LIBRARIES}
-        ${GLOG_LIBRARY}
+        ${GLOG_LIBRARIES}
         ${Protobuf_LIBRARIES}
         ${YAML_CPP_LIBRARIES}
-        ${PCL_LIBRARY_DIRS}
-        Eigen
+        ${PCL_LIBRARIES}
+        ${GFLAGS_LIBRARIES}
+        ${GDAL_LIBRARY}
         )
-
 
 # setup params for the build
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/Bin)
@@ -65,12 +67,11 @@ SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 add_subdirectory(src/aslam)
 
 LIST(APPEND LINK_LIBS_ASLAM
-        ${aslam_lib_common}
-        ${aslam_lib_pipeline}
-        ${aslam_lib_cameras}
-        ${aslam_lib_frames}
+        aslam_lib_common
+        aslam_lib_pipeline
+        aslam_lib_cameras
+        aslam_lib_frames
         )
-
 ########################
 # LIBRARIES Utils + IO #
 ########################
@@ -87,32 +88,40 @@ add_library(BorisBrain_RTMapping_io
 target_link_libraries(BorisBrain_RTMapping_io
         ${LINK_LIBS_EXTERNAL}
         ${LINK_LIBS_ASLAM}
+        ${BorisBrain_RTMapping_utils}
         )
 
 #######################
 # LIBRARIES Dense pcl #
 #######################
 
-add_library(BorisBrain_TRMapping_DensePcl
+add_library(BorisBrain_RTMapping_DensePcl
             src/dense_pcl/stereo.cpp
             src/dense_pcl/densifier.cpp
             src/dense_pcl/block-matching-sgbm.cpp
             src/dense_pcl/block-matching-bm.cpp
             src/dense_pcl/rectifier.cpp)
 
-target_link_libraries(BorisBrain_TRMapping_DensePcl
+target_link_libraries(BorisBrain_RTMapping_DensePcl
         ${LINK_LIBS_EXTERNAL}
         ${LINK_LIBS_ASLAM}
-        ${BorisBrain_RTMapping_io})
+        BorisBrain_RTMapping_io
+        )
 
 
-#Create Boris library
-#target_link_libraries(BorisBrain_RTMapping ${LINK_LIBS_EXTERNAL})
+#################################################
 
 
+LIST(APPEND LINK_LIBS_BORIS_RT
+        BorisBrain_RTMapping_DensePcl
+        BorisBrain_RTMapping_io
+        )
+
+LIST(APPEND test_src
+        src/programs/BorisBrainV2_RT.cpp)
 
 ##########################################################################################
 # PROGRAMS
 ##########################################################################################
-#ADD_EXECUTABLE(BorisBrain src/Boris_Brain.cpp src/EnvProcessing/VisualOdometry/VO_Pipeline_Live.cpp)
-#TARGET_LINK_LIBRARIES(BorisBrain BorisBrain_VisualOdometry ${LINK_LIBS_EXTERNAL})
+ADD_EXECUTABLE(BorisBrainV2 ${test_src})
+TARGET_LINK_LIBRARIES(BorisBrainV2 ${LINK_LIBS_EXTERNAL} ${LINK_LIBS_BORIS_RT})

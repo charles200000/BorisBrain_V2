@@ -36,6 +36,8 @@ void Sensor::setRandom() {
 }
 
 bool Sensor::deserialize(const YAML::Node& sensor_node) {
+
+  LOG(INFO) << "Starting deserialize";
   if (!sensor_node.IsDefined() || sensor_node.IsNull()) {
     LOG(ERROR) << "Invalid YAML node for sensor deserialization.";
     return false;

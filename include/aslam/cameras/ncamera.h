@@ -11,6 +11,7 @@
 #include <aslam/common/sensor.h>
 #include <aslam/common/unique-id.h>
 #include <gtest/gtest_prod.h>
+#include <aslam/cameras/yaml/ncamera-yaml-serialization.h>
 
 namespace sm {
 class PropertyTree;
@@ -172,7 +173,7 @@ class NCamera : public Sensor {
   /// NCamera and all contained cameras.
   aslam::NCamera::Ptr cloneRigWithoutDistortion() const;
 
- private:
+private:
   bool isValidImpl() const override;
 
   void setRandomImpl() override;

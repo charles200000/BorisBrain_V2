@@ -3,8 +3,6 @@
 ############
 set(PROTO_DEFNS ${PROJECT_SOURCE_DIR}/src/aslam/common/proto/aslam/common/id.proto)
 protobuf_generate_cpp(PROTO_SRCS PROTO_HDRS ${PROTO_DEFNS})
-
-message(${PROTO_HDRS})
 #############
 # LIBRARIES #
 #############
@@ -36,6 +34,8 @@ add_library(aslam_lib_cameras
         cameras/distortion.cc
         cameras/ncamera.cc
         cameras/random-camera-generator.cc
+        cameras/ncamera-yaml-serialization.cpp
+        cameras/camera-yaml-serialization.cpp
         )
 
 add_library(aslam_lib_frames
@@ -93,19 +93,17 @@ target_link_libraries(agast
         ${GLOG_LIBRARY})
 
 target_link_libraries(aslam_lib_cameras
-        ${aslam_lib_common}
+        aslam_lib_common
         ${OpenCV_LIBS}
         ${Boost_LIBRARIES}
         ${GLOG_LIBRARY}
         ${Protobuf_LIBRARIES}
-        ${YAML_CPP_LIBRARIES}
-        Eigen)
+        ${YAML_CPP_LIBRARIES})
 
 target_link_libraries(brisk
         ${Boost_LIBRARIES}
         ${agast}
-        ${GLOG_LIBRARY}
-        Eigen)
+        ${GLOG_LIBRARY})
 
 target_link_libraries(aslam_lib_common
         ${OpenCV_LIBS}
@@ -113,25 +111,24 @@ target_link_libraries(aslam_lib_common
         ${GLOG_LIBRARY}
         ${Protobuf_LIBRARIES}
         ${YAML_CPP_LIBRARIES}
-        Eigen)
+        ${GFLAGS_LIBRARIES}
+        )
 
 target_link_libraries(aslam_lib_frames
         ${OpenCV_LIBS}
-        ${aslam_lib_common}
-        ${aslam_lib_cameras}
+        aslam_lib_common
+        aslam_lib_cameras
         ${Boost_LIBRARIES}
         ${GLOG_LIBRARY}
         ${Protobuf_LIBRARIES}
-        ${YAML_CPP_LIBRARIES}
-        Eigen)
+        ${YAML_CPP_LIBRARIES})
 
 target_link_libraries(aslam_lib_pipeline
         ${OpenCV_LIBS}
-        ${aslam_lib_common}
-        ${aslam_lib_frames}
-        ${aslam_lib_cameras}
+        aslam_lib_common
+        aslam_lib_frames
+        aslam_lib_cameras
         ${Boost_LIBRARIES}
         ${GLOG_LIBRARY}
         ${Protobuf_LIBRARIES}
-        ${YAML_CPP_LIBRARIES}
-        Eigen)
+        ${YAML_CPP_LIBRARIES})
