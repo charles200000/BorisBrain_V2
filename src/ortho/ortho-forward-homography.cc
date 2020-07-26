@@ -6,7 +6,7 @@
  */
 
 // HEADER
-#include "aerial-mapper-ortho/ortho-forward-homography.h"
+#include "ortho-forward-homography.h"
 
 // NON-SYSTEM
 #include <opencv2/highgui/highgui.hpp>

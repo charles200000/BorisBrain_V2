@@ -149,6 +149,9 @@ void Stereo::addFrame(const Pose& T_G_B, const Image& image_raw,
   image_distorted_1_ = image_distorted_2_;
 }
 
+
+int pcl_i = 0;
+
 void Stereo::processStereoFrame(
     AlignedType<std::vector, Eigen::Vector3d>::type* point_cloud,
     std::vector<int>* point_cloud_intensities) {
@@ -187,7 +190,9 @@ void Stereo::processStereoFrame(
   // 5. Publish the point cloud.
   pcl::PointCloud<pcl::PointXYZRGB> pointCloud_PCL;
   pcl::fromPCLPointCloud2(pointCloud, pointCloud_PCL);
-  pcl::io::savePCDFileASCII ("test_pcd.pcd", pointCloud_PCL);
+  std::string fileName = "pcd_" + std::to_string(pcl_i) + ".pcd";
+  pcl_i++;
+  pcl::io::savePCDFileASCII (fileName, pointCloud_PCL);
   //pub_point_cloud_.publish(pointCloud);
   //ros::spinOnce();
 
