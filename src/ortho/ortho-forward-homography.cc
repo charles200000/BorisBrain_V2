@@ -16,13 +16,12 @@ namespace ortho {
 OrthoForwardHomography::OrthoForwardHomography(
     const std::shared_ptr<aslam::NCamera>& ncameras, const Settings& settings)
     : ncameras_(ncameras),
-      settings_(settings),
-      node_handle_(),
-      image_transport_(image_transport::ImageTransport(node_handle_)),
-      pub_orthomosaic_image_(
-          image_transport_.advertise("/orthomosaic/result", 1)),
-      pub_undistorted_image_(
-          image_transport_.advertise("/orthomosaic/undistorted", 1)) {
+      settings_(settings)
+      //node_handle_(),
+      //image_transport_(image_transport::ImageTransport(node_handle_)),
+      //pub_orthomosaic_image_(image_transport_.advertise("/orthomosaic/result", 1)),
+      //pub_undistorted_image_(image_transport_.advertise("/orthomosaic/undistorted", 1))
+      {
   CHECK(ncameras_);
   prepareBlenderForNextImage();
   undistorter_ = aslam::createMappedUndistorter(
@@ -75,10 +74,15 @@ void OrthoForwardHomography::updateOrthomosaic(const Pose& T_G_B,
                                                const cv::Mat& image) {
   cv::Mat image_undistorted;
   undistorter_->processImage(image, &image_undistorted);
-  publishUndistortedImage(image_undistorted);
+  //publishUndistortedImage(image_undistorted);
 
-  geometry_msgs::PolygonStamped polygon;
-  polygon.header.stamp = ros::Time::now();
+
+  //geometry_msgs::PolygonStamped polygon;
+  //polygon.header.stamp = ros::Time::now();
+
+  grid_map::Polygon polygon;
+  uint64_t time = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now().time_since_epoch()).count();
+  polygon.setTimestamp(time);
 
   const aslam::Transformation& T_G_C =
       T_G_B * ncameras_->get_T_C_B(kFrameIdx).inverse();
@@ -118,7 +122,7 @@ void OrthoForwardHomography::updateOrthomosaic(const Pose& T_G_B,
   prepareBlenderForNextImage();
   addImage(result_, result_mask_);
   showOrthomosaicCvWindow(result_);
-  publishOrthomosaic(result_);
+  //publishOrthomosaic(result_);
 
   if (ksaveOrthoIncrementallyToFile) {
     std::stringstream ss;
@@ -128,7 +132,7 @@ void OrthoForwardHomography::updateOrthomosaic(const Pose& T_G_B,
     cv::imwrite(settings_.filename_mosaic_output, result_);
   }
 
-  ros::spinOnce();
+  //ros::spinOnce();
 }
 
 void OrthoForwardHomography::batch(const Poses& T_G_Bs, const Images& images) {
@@ -206,7 +210,7 @@ void OrthoForwardHomography::showUndistortedCvWindow(
   cv::imshow("Undistorted image", image_undistorted);
   cv::waitKey(1);
 }
-
+/*
 void OrthoForwardHomography::publishOrthomosaic(cv::Mat image) {
   sensor_msgs::Image msg;
   msg.header.stamp = ros::Time::now();
@@ -226,5 +230,6 @@ void OrthoForwardHomography::publishUndistortedImage(cv::Mat image) {
   pub_undistorted_image_.publish(msg);
   ros::spinOnce();
 }
+ */
 
 }  // namespace ortho

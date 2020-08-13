@@ -12,21 +12,26 @@
 #include <memory>
 
 // NON-SYSTEM
-#include <aerial-mapper-io/aerial-mapper-io.h>
+#include "aerial-mapper-io.h"
 #include <aslam/cameras/ncamera.h>
 #include <aslam/pipeline/undistorter.h>
 #include <aslam/pipeline/undistorter-mapped.h>
-#include <cv_bridge/cv_bridge.h>
 #include <Eigen/Dense>
-#include <geometry_msgs/PolygonStamped.h>
-#include <image_transport/image_transport.h>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/stitching/detail/blenders.hpp>
+#include <opencv2/opencv.hpp>
+#include "grid_map_core/Polygon.hpp"
+
+
+/*
+#include <cv_bridge/cv_bridge.h>
+#include <geometry_msgs/PolygonStamped.h>
+#include <image_transport/image_transport.h>
 #include <ros/ros.h>
 #include <sensor_msgs/fill_image.h>
 #include <sensor_msgs/Image.h>
-
+*/
 
 namespace ortho {
 
@@ -70,10 +75,12 @@ class OrthoForwardHomography {
   cv::Mat result_;
   cv::Mat result_mask_;
 
+  /*
   ros::NodeHandle node_handle_;
   image_transport::ImageTransport image_transport_;
   image_transport::Publisher pub_undistorted_image_;
   image_transport::Publisher pub_orthomosaic_image_;
+   */
 
   int image_idx = 0u;
 

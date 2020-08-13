@@ -14,9 +14,11 @@
 #include <grid_map_core/GridMap.hpp>
 #include <grid_map_core/iterators/GridMapIterator.hpp>
 #include <grid_map_cv/grid_map_cv.hpp>
+/*
 #include <grid_map_msgs/GridMap.h>
 #include <ros/publisher.h>
 #include <ros/ros.h>
+*/
 
 namespace grid_map {
 
@@ -36,7 +38,7 @@ class AerialGridMap{
 
   void publishUntilShutdown();
 
-  void publishOnce();
+  //void publishOnce();
 
   grid_map::GridMap* getMutable() {
     return &map_;
@@ -49,8 +51,11 @@ private:
   grid_map::GridMap map_;
 
   Settings settings_;
+
+  /* ROS related
   ros::NodeHandle node_handle_;
   ros::Publisher pub_grid_map_;
+   */
 };
 
 

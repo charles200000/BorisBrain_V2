@@ -63,9 +63,32 @@ LIST(APPEND LINK_LIBS_EXTERNAL
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/Bin)
 SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 
+###########################################################################
+####################### Eigen Plugins ###############################
+###########################################################################
+
+set(EIGEN_FUNCTORS_PLUGIN_PATH "grid_map_core/eigen_plugins/FunctorsPlugin.hpp")
+if (EIGEN_FUNCTORS_PLUGIN)
+    if (NOT EIGEN_FUNCTORS_PLUGIN STREQUAL EIGEN_FUNCTORS_PLUGIN_PATH)
+        MESSAGE(FATAL_ERROR "EIGEN_FUNCTORS_PLUGIN already defined!")
+    endif ()
+else (EIGEN_FUNCTORS_PLUGIN)
+    add_definitions(-DEIGEN_FUNCTORS_PLUGIN=\"${EIGEN_FUNCTORS_PLUGIN_PATH}\")
+endif (EIGEN_FUNCTORS_PLUGIN)
+
+set(EIGEN_DENSEBASE_PLUGIN_PATH "grid_map_core/eigen_plugins/DenseBasePlugin.hpp")
+if (EIGEN_DENSEBASE_PLUGIN)
+    if (NOT EIGEN_DENSEBASE_PLUGIN STREQUAL EIGEN_DENSEBASE_PLUGIN_PATH)
+        MESSAGE(FATAL_ERROR "EIGEN_DENSEBASE_PLUGIN already defined!")
+    endif ()
+else (EIGEN_DENSEBASE_PLUGIN)
+    add_definitions(-DEIGEN_DENSEBASE_PLUGIN=\"${EIGEN_DENSEBASE_PLUGIN_PATH}\")
+endif (EIGEN_DENSEBASE_PLUGIN)
+
+
 # add all coponments and ceate all libraries
 add_subdirectory(src/aslam)
-add_subdirectory(src/utils/EXIF_Parsing)
+add_subdirectory(src/utils)
 
 LIST(APPEND LINK_LIBS_ASLAM
         aslam_lib_common
@@ -73,6 +96,8 @@ LIST(APPEND LINK_LIBS_ASLAM
         aslam_lib_cameras
         aslam_lib_frames
         )
+
+
 ########################
 # LIBRARIES Utils + IO #
 ########################
@@ -120,23 +145,26 @@ target_link_libraries(BorisBrain_RTMapping_GridMap
         ${LINK_LIBS_EXTERNAL}
         ${LINK_LIBS_ASLAM}
         BorisBrain_RTMapping_utils
+        BorisBrain_RTMapping_io
         )
 
 
-###############
-# LIBRARY DSM #
-###############
+#################
+# LIBRARY ortho #
+#################
 
-add_library(BorisBrain_RTMapping_DSM
-        src/dsm/dsm.cc)
+add_library(BorisBrain_RTMapping_ortho
+        src/ortho/ortho-from-pcl.cc
+        src/ortho/ortho-backward-grid.cc
+        src/ortho/ortho-forward-homography.cc)
 
-target_link_libraries(BorisBrain_RTMapping_DSM
+target_link_libraries(BorisBrain_RTMapping_ortho
         ${LINK_LIBS_EXTERNAL}
         ${LINK_LIBS_ASLAM}
+        gridmap_core
+        gridmap_cv
         BorisBrain_RTMapping_utils
-        BorisBrain_RTMapping_GridMap
         )
-
 #################################################
 
 

@@ -13,7 +13,7 @@
 #include <string>
 
 // NON-SYSTEM
-#include <aerial-mapper-io/aerial-mapper-io.h>
+#include <aerial-mapper-io.h>
 #include <aslam/cameras/camera.h>
 #include <aslam/cameras/camera-pinhole.h>
 #include <aslam/cameras/ncamera.h>
@@ -24,8 +24,11 @@
 #include <grid_map_core/GridMap.hpp>
 #include <grid_map_core/iterators/GridMapIterator.hpp>
 #include <grid_map_cv/grid_map_cv.hpp>
+
+/*
 #include <grid_map_msgs/GridMap.h>
 #include <ros/ros.h>
+*/
 
 namespace ortho {
 

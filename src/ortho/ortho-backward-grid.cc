@@ -6,7 +6,7 @@
  */
 
 // HEADER
-#include "aerial-mapper-ortho/ortho-backward-grid.h"
+#include "ortho-backward-grid.h"
 
 // SYSTEM
 #include <fstream>
@@ -52,7 +52,8 @@ void OrthoBackwardGrid::updateOrthomosaicLayer(const Poses& T_G_Cs,
   grid_map::Matrix& layer_observation_index = (*map)["observation_index"];
   grid_map::Matrix& layer_colored_ortho = (*map)["colored_ortho"];
 
-  ros::Time time1 = ros::Time::now();
+  //ros::Time time1 = ros::Time::now();
+  uint64_t time1 = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now().time_since_epoch()).count();
   for (grid_map::GridMapIterator it(*map); !it.isPastEnd(); ++it) {
     grid_map::Position position;
     map->getPosition(*it, position);
@@ -120,8 +121,8 @@ void OrthoBackwardGrid::updateOrthomosaicLayer(const Poses& T_G_Cs,
     }      // loop images
   }        // loop cells
 
-  const ros::Time time2 = ros::Time::now();
-  const ros::Duration& delta_time = time2 - time1;
+  uint64_t time2 = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now().time_since_epoch()).count();
+  uint64_t delta_time = time2 - time1;
   VLOG(1) << "dt(backward_grid, single-thread): " << delta_time;
 }
 
@@ -137,7 +138,7 @@ void OrthoBackwardGrid::updateOrthomosaicLayerMultiThreaded(
   grid_map::Matrix& layer_observation_index = (*map)["observation_index"];
   grid_map::Matrix& layer_colored_ortho = (*map)["colored_ortho"];
 
-  ros::Time time1 = ros::Time::now();
+  uint64_t time1 = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now().time_since_epoch()).count();
 
   auto generateCellWiseOrthomosaic =
       [&](const std::vector<size_t>& sample_idx_range_) {
@@ -215,8 +216,8 @@ void OrthoBackwardGrid::updateOrthomosaicLayerMultiThreaded(
   const size_t num_threads = std::thread::hardware_concurrency();
   utils::parFor(num_samples, generateCellWiseOrthomosaic, num_threads);
 
-  const ros::Time time2 = ros::Time::now();
-  const ros::Duration& delta_time = time2 - time1;
+  uint64_t time2 = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now().time_since_epoch()).count();
+  uint64_t delta_time = time2 - time1;
   VLOG(1) << "dt(backward_grid, multi-threads): " << delta_time;
 }
 

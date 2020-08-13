@@ -6,10 +6,10 @@
  */
 
 // HEADER
-#include "aerial-mapper-ortho/ortho-from-pcl.h"
+#include "ortho-from-pcl.h"
 
 // NON-SYSTEM
-#include <aerial-mapper-utils/utils-common.h>
+#include "utils-common.h"
 
 namespace ortho {
 
@@ -46,7 +46,8 @@ void OrthoFromPcl::process(
   kd_tree.buildIndex();
 
   // Loop over all cells.
-  const ros::Time time1 = ros::Time::now();
+  //const ros::Time time1 = ros::Time::now();
+  uint64_t time1 = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now().time_since_epoch()).count();
   grid_map::Matrix& layer_ortho = (*map)["ortho"];
   for (grid_map::GridMapIterator it(*map); !it.isPastEnd(); ++it) {
     grid_map::Position position;
@@ -107,8 +108,10 @@ void OrthoFromPcl::process(
     }
   }
 
-  const ros::Time time2 = ros::Time::now();
-  const ros::Duration& delta_time = time2 - time1;
+  //const ros::Time time2 = ros::Time::now();
+  //const ros::Duration& delta_time = time2 - time1;
+  uint64_t time2 = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now().time_since_epoch()).count();
+  uint64_t delta_time = time2 - time1;
   LOG(INFO) << "Time elapsed: " << delta_time;
 }
 
