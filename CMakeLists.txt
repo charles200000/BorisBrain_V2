@@ -65,6 +65,7 @@ SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 
 # add all coponments and ceate all libraries
 add_subdirectory(src/aslam)
+add_subdirectory(src/utils/EXIF_Parsing)
 
 LIST(APPEND LINK_LIBS_ASLAM
         aslam_lib_common
@@ -108,6 +109,33 @@ target_link_libraries(BorisBrain_RTMapping_DensePcl
         BorisBrain_RTMapping_io
         )
 
+######################
+# LIBRARIES Grid Map #
+######################
+
+add_library(BorisBrain_RTMapping_GridMap
+        src/grid_map/aerial-mapper-grid-map.cc)
+
+target_link_libraries(BorisBrain_RTMapping_GridMap
+        ${LINK_LIBS_EXTERNAL}
+        ${LINK_LIBS_ASLAM}
+        BorisBrain_RTMapping_utils
+        )
+
+
+###############
+# LIBRARY DSM #
+###############
+
+add_library(BorisBrain_RTMapping_DSM
+        src/dsm/dsm.cc)
+
+target_link_libraries(BorisBrain_RTMapping_DSM
+        ${LINK_LIBS_EXTERNAL}
+        ${LINK_LIBS_ASLAM}
+        BorisBrain_RTMapping_utils
+        BorisBrain_RTMapping_GridMap
+        )
 
 #################################################
 
