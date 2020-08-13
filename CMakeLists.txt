@@ -165,19 +165,38 @@ target_link_libraries(BorisBrain_RTMapping_ortho
         gridmap_cv
         BorisBrain_RTMapping_utils
         )
+
+###############
+# LIBRARY DSM #
+###############
+
+add_library(BorisBrain_RTMapping_dsm
+        src/dsm/dsm.cc)
+
+target_link_libraries(BorisBrain_RTMapping_dsm
+        ${LINK_LIBS_EXTERNAL}
+        ${LINK_LIBS_ASLAM}
+        gridmap_core
+        gridmap_cv
+        BorisBrain_RTMapping_utils)
+
+
+
 #################################################
 
 
 LIST(APPEND LINK_LIBS_BORIS_RT
         BorisBrain_RTMapping_DensePcl
         BorisBrain_RTMapping_io
+        BorisBrain_RTMapping_ortho
+        BorisBrain_RTMapping_GridMap
         )
-
-LIST(APPEND test_src
-        src/programs/BorisBrainV2_RT.cpp)
 
 ##########################################################################################
 # PROGRAMS
 ##########################################################################################
-ADD_EXECUTABLE(BorisBrainV2 ${test_src})
-TARGET_LINK_LIBRARIES(BorisBrainV2 ${LINK_LIBS_EXTERNAL} ${LINK_LIBS_BORIS_RT})
+ADD_EXECUTABLE(BorisBrainV2-PC src/programs/BorisBrainV2_RT_PC.cpp)
+TARGET_LINK_LIBRARIES(BorisBrainV2-PC ${LINK_LIBS_EXTERNAL} ${LINK_LIBS_BORIS_RT})
+
+ADD_EXECUTABLE(BorisBrainV2-Ortho src/programs/BorisBrainV2_RT_Ortho.cpp)
+TARGET_LINK_LIBRARIES(BorisBrainV2-Ortho ${LINK_LIBS_EXTERNAL} ${LINK_LIBS_BORIS_RT})

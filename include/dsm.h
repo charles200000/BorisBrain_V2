@@ -18,8 +18,10 @@
 #include <grid_map_core/iterators/GridMapIterator.hpp>
 #include <grid_map_cv/grid_map_cv.hpp>
 
+/*
 #include <grid_map_msgs/GridMap.h>
 #include <ros/ros.h>
+*/
 
 namespace dsm {
 

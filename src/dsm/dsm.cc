@@ -53,7 +53,8 @@ void Dsm::initializeAndFillKdTree(
 
 void Dsm::updateElevationLayer(grid_map::GridMap* map) {
   CHECK(map);
-  const ros::Time time1 = ros::Time::now();
+  //const ros::Time time1 = ros::Time::now();
+  uint64_t time1 = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now().time_since_epoch()).count();
   for (grid_map::GridMapIterator it(*map); !it.isPastEnd(); ++it) {
     grid_map::Position position;
     map->getPosition(*it, position);
@@ -105,14 +106,14 @@ void Dsm::updateElevationLayer(grid_map::GridMap* map) {
       map->at("elevation", *it) = idw_height;
     }
   }
-  const ros::Time time2 = ros::Time::now();
-  const ros::Duration& delta_time = time2 - time1;
+  uint64_t time2 = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now().time_since_epoch()).count();
+  uint64_t delta_time = time2 - time1;
   VLOG(1) << "dt(update-dsm, single-thread): " << delta_time;
 }
 
 void Dsm::updateElevationLayerMultiThreaded(grid_map::GridMap* map) {
   CHECK(map);
-  const ros::Time time1 = ros::Time::now();
+  uint64_t time1 = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now().time_since_epoch()).count();
   grid_map::Matrix& layer_elevation = (*map)["elevation"];
 
   auto generateCellWiseDsm = [&](const std::vector<size_t>& sample_idx_range_) {
@@ -178,8 +179,8 @@ void Dsm::updateElevationLayerMultiThreaded(grid_map::GridMap* map) {
   const size_t num_threads = std::thread::hardware_concurrency();
   utils::parFor(num_samples, generateCellWiseDsm, num_threads);
 
-  const ros::Time time2 = ros::Time::now();
-  const ros::Duration& delta_time = time2 - time1;
+  uint64_t time2 = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now().time_since_epoch()).count();
+  uint64_t delta_time = time2 - time1;
   VLOG(1) << "dt(update-dsm, multi-thread): " << delta_time;
 }
 
